@@ -28,9 +28,9 @@ Declarar instancias globales
         // Inicializar Animes
         List items = new ArrayList();
 
-        items.add(new Anime(R.drawable.bandera_brasil, "Angel Beats", 230));
-        items.add(new Anime(R.drawable.bandera_uruguay, "Death Note", 456));
-        items.add(new Anime(R.drawable.bandera_argentina, "Fate Stay Night", 342));
+        items.add(new Equipo(R.drawable.bandera_brasil, "Angel Beats", 230));
+        items.add(new Equipo(R.drawable.bandera_uruguay, "Death Note", 456));
+        items.add(new Equipo(R.drawable.bandera_argentina, "Fate Stay Night", 342));
 
 
 // Obtener el Recycler
@@ -42,7 +42,7 @@ Declarar instancias globales
         recycler.setLayoutManager(lManager);
 
 // Crear un nuevo adaptador
-        adapter = new AnimeAdapter(items);
+        adapter = new EquipoAdapter(items);
         recycler.setAdapter(adapter);
     }
     }
