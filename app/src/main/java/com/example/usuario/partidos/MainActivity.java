@@ -46,5 +46,7 @@ Declarar instancias globales
         adapter = new EquipoAdapter(items);
         recycler.setAdapter(adapter);
     }
+
+
     }
 
