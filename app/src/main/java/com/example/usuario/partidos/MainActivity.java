@@ -29,7 +29,7 @@ Declarar instancias globales
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
- 
+
 
 
         // Inicializar Animes

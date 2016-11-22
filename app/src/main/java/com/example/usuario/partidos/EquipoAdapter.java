@@ -26,8 +26,8 @@ import java.util.List;
 
             public EquipoViewHolder(View v) {
                 super(v);
-                ivBandera = (ImageView) v.findViewById(R.id.Bandera);
-                tvNombre = (TextView) v.findViewById(R.id.nombre);
+                ivBandera = (ImageView) v.findViewById(R.id.ivBandera);
+                tvNombre = (TextView) v.findViewById(R.id.tvNombre);
                 tvResultado = (TextView) v.findViewById(R.id.resultado);
             }
         }
