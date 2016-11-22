@@ -6,48 +6,45 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
     ArrayList equipos;
-    private RecyclerView listaEquipos;
+    /*
+    Declarar instancias globales
+    */
+    private RecyclerView recycler;
+    private RecyclerView.Adapter adapter;
+    private RecyclerView.LayoutManager lManager;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        inicializarEquipos();
-        inicializarAdaptador();
-
-        listaEquipos = (RecyclerView) findViewById(R.id.rvEquipos);
-        LinearLayoutManager llm = new LinearLayoutManager(this);
-        llm.setOrientation(LinearLayoutManager.VERTICAL);
-
-        listaEquipos.setLayoutManager(llm);
 
 
+// Inicializar Animes
+        List items = new ArrayList();
+
+        items.add(new Anime(R.drawable.bandera_uruguay, "Angel Beats", 230));
+        items.add(new Anime(R.drawable.bandera_argentina, "Death Note", 456));
+        items.add(new Anime(R.drawable.bandera_brasil, "Fate Stay Night", 342));
 
 
-    }
+// Obtener el Recycler
+        recycler = (RecyclerView) findViewById(R.id.reciclador);
+        recycler.setHasFixedSize(true);
 
+// Usar un administrador para LinearLayout
+        lManager = new LinearLayoutManager(this);
+        recycler.setLayoutManager(lManager);
 
-    public void inicializarAdaptador(){
-
-        EquipoAdaptador adaptador = new EquipoAdaptador(equipos);
-        listaEquipos.setAdapter(adaptador);
-    }
-
-
-    public void inicializarEquipos(){
-
-
-        equipos = new ArrayList<Equipo>();
-
-        equipos.add(new Equipo(R.drawable.bandera_uruguay,"Uruguay",5));
-        equipos.add(new Equipo(R.drawable.bandera_brasil,"Brasil",2));
-        equipos.add(new Equipo(R.drawable.bandera_argentina,"Argentina",1));
-
+// Crear un nuevo adaptador
+        adapter = new AnimeAdapter(items);
+        recycler.setAdapter(adapter);
 
 
     }
