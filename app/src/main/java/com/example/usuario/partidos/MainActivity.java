@@ -5,12 +5,18 @@ import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
+
+    private EditText etAgregarResultado;
+    private Button bAgregarResultado;
     /*
 Declarar instancias globales
 */
@@ -23,7 +29,7 @@ Declarar instancias globales
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
+ 
 
 
         // Inicializar Animes
@@ -32,6 +38,7 @@ Declarar instancias globales
         items.add(new Equipo(R.drawable.bandera_brasil, "Brasil", 2));
         items.add(new Equipo(R.drawable.bandera_uruguay, "Uruguay", 4));
         items.add(new Equipo(R.drawable.bandera_argentina, "Argentina", 3));
+        items.add(new Equipo(R.drawable.bandera_colombia, "Colombia", 1));
 
 
 // Obtener el Recycler
@@ -48,5 +55,9 @@ Declarar instancias globales
     }
 
 
+    @Override
+    public void onClick(View view) {
+
     }
+}
 
