@@ -10,14 +10,12 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
-    ArrayList equipos;
     /*
-    Declarar instancias globales
-    */
+Declarar instancias globales
+*/
     private RecyclerView recycler;
     private RecyclerView.Adapter adapter;
     private RecyclerView.LayoutManager lManager;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,12 +24,13 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-// Inicializar Animes
+
+        // Inicializar Animes
         List items = new ArrayList();
 
-        items.add(new Anime(R.drawable.bandera_uruguay, "Angel Beats", 230));
-        items.add(new Anime(R.drawable.bandera_argentina, "Death Note", 456));
-        items.add(new Anime(R.drawable.bandera_brasil, "Fate Stay Night", 342));
+        items.add(new Anime(R.drawable.bandera_brasil, "Angel Beats", 230));
+        items.add(new Anime(R.drawable.bandera_uruguay, "Death Note", 456));
+        items.add(new Anime(R.drawable.bandera_argentina, "Fate Stay Night", 342));
 
 
 // Obtener el Recycler
@@ -45,10 +44,6 @@ public class MainActivity extends AppCompatActivity {
 // Crear un nuevo adaptador
         adapter = new AnimeAdapter(items);
         recycler.setAdapter(adapter);
-
-
     }
-}
-
-
+    }
 
