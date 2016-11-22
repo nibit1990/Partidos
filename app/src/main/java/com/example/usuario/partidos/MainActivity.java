@@ -2,6 +2,7 @@ package com.example.usuario.partidos;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
@@ -38,7 +39,7 @@ Declarar instancias globales
         recycler.setHasFixedSize(true);
 
 // Usar un administrador para LinearLayout
-        lManager = new LinearLayoutManager(this);
+        lManager = new GridLayoutManager(this, 2);
         recycler.setLayoutManager(lManager);
 
 // Crear un nuevo adaptador
