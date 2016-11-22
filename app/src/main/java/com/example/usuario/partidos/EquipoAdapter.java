@@ -53,7 +53,7 @@ import java.util.List;
         public void onBindViewHolder(EquipoViewHolder viewHolder, int i) {
             viewHolder.ivBandera.setImageResource(items.get(i).getBandera());
             viewHolder.tvNombre.setText(items.get(i).getNombre());
-            viewHolder.tvResultado.setText("Visitas:"+String.valueOf(items.get(i).getResultado()));
+            viewHolder.tvResultado.setText("Resultado:"+String.valueOf(items.get(i).getResultado()));
         }
     }
 

@@ -28,9 +28,9 @@ Declarar instancias globales
         // Inicializar Animes
         List items = new ArrayList();
 
-        items.add(new Equipo(R.drawable.bandera_brasil, "Angel Beats", 230));
-        items.add(new Equipo(R.drawable.bandera_uruguay, "Death Note", 456));
-        items.add(new Equipo(R.drawable.bandera_argentina, "Fate Stay Night", 342));
+        items.add(new Equipo(R.drawable.bandera_brasil, "Brasil", 2));
+        items.add(new Equipo(R.drawable.bandera_uruguay, "Uruguay", 4));
+        items.add(new Equipo(R.drawable.bandera_argentina, "Argentina", 3));
 
 
 // Obtener el Recycler
