@@ -71,15 +71,15 @@ Declarar instancias globales
         PageAdapter adapter = new PageAdapter(
                 getSupportFragmentManager());
         adapter.addFragment(MainActivityFragment.newInstance(getResources()
-                .getColor(R.color.colorPrimary), 0));
+                .getColor(R.color.Blanco), 0));
         adapter.addFragment(MainActivityFragment.newInstance(getResources()
-                .getColor(R.color.colorPrimary), 1));
+                .getColor(R.color.Blanco), 1));
         adapter.addFragment(MainActivityFragment.newInstance(getResources()
-                .getColor(R.color.colorPrimary), 2));
+                .getColor(R.color.Blanco), 2));
         adapter.addFragment(MainActivityFragment.newInstance(getResources()
-                .getColor(R.color.colorPrimary), 3));
+                .getColor(R.color.Blanco), 3));
         adapter.addFragment(MainActivityFragment.newInstance(getResources()
-                .getColor(R.color.colorPrimary), 4));
+                .getColor(R.color.Blanco), 4));
         this.pager.setAdapter(adapter);
 
     }
