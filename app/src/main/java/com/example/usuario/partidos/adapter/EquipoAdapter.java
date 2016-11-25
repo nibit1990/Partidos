@@ -1,4 +1,4 @@
-package com.example.usuario.partidos;
+package com.example.usuario.partidos.adapter;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -6,6 +6,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.example.usuario.partidos.R;
+import com.example.usuario.partidos.pojo.Equipo;
 
 import java.util.List;
 
@@ -16,7 +19,12 @@ import java.util.List;
 
 
     public class EquipoAdapter extends RecyclerView.Adapter<EquipoAdapter.EquipoViewHolder> {
+
+
+
         private List<Equipo> items;
+
+
 
         public static class EquipoViewHolder extends RecyclerView.ViewHolder {
             // Campos respectivos de un item
@@ -32,15 +40,25 @@ import java.util.List;
             }
         }
 
+
+
+
         public EquipoAdapter(List<Equipo> items) {
             this.items = items;
         }
+
+
+
+
 
         @Override
         public int getItemCount() {
             return items.size();
 
         }
+
+
+
 
         @Override
         public EquipoViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
@@ -49,11 +67,16 @@ import java.util.List;
             return new EquipoViewHolder(v);
         }
 
+
+
         @Override
         public void onBindViewHolder(EquipoViewHolder viewHolder, int i) {
             viewHolder.ivBandera.setImageResource(items.get(i).getBandera());
             viewHolder.tvNombre.setText(items.get(i).getNombre());
             viewHolder.tvResultado.setText("Resultado:"+String.valueOf(items.get(i).getResultado()));
         }
+
+
+
     }
 

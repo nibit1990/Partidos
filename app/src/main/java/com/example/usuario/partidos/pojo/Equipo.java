@@ -1,4 +1,4 @@
-package com.example.usuario.partidos;
+package com.example.usuario.partidos.pojo;
 
 /**
  * Created by Usuario on 22/11/2016.
