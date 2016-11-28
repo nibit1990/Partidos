@@ -12,6 +12,7 @@ import android.support.v7.widget.Toolbar;
 import com.example.usuario.partidos.adapter.EquipoAdapter;
 import com.example.usuario.partidos.adapter.PageAdapter;
 import com.example.usuario.partidos.fragment.MainActivityFragment;
+import com.example.usuario.partidos.fragment.SegundoFragment;
 import com.example.usuario.partidos.pojo.Equipo;
 
 import java.util.ArrayList;
@@ -26,15 +27,7 @@ public class MainActivity extends AppCompatActivity {
     private TabLayout tabLayout;
 
 
-    /*
-Declarar instancias globales
-*/
-    private RecyclerView recycler;
-    private RecyclerView.Adapter adapter;
-    private RecyclerView.LayoutManager lManager;
 
-    // Inicializar array con equipos y sus datos
-    List items = new ArrayList();
 
     ViewPager pager = null;
 
@@ -49,7 +42,7 @@ Declarar instancias globales
         setContentView(R.layout.activity_main);
 
 
-        inicializarDatos();
+
 
 
 
@@ -70,9 +63,9 @@ Declarar instancias globales
         // Create an adapter with the fragments we show on the ViewPager
         PageAdapter adapter = new PageAdapter(getSupportFragmentManager());
 
-        adapter.addFragment(MainActivityFragment.newInstance(getResources().getColor(R.color.Blanco), 0));
+        adapter.addFragment(MainActivityFragment.newInstance(0));
+        adapter.addFragment(SegundoFragment.newInstance(1));
 
-        adapter.addFragment(MainActivityFragment.newInstance(getResources().getColor(R.color.Blanco), 1));
 
         this.pager.setAdapter(adapter);
 
@@ -80,21 +73,7 @@ Declarar instancias globales
 
 
 
-/*
-        // Obtener el Recycler
-        recycler = (RecyclerView) findViewById(R.id.reciclador);
-        recycler.setHasFixedSize(true);
 
-// Usar un administrador para LinearLayout
-        lManager = new LinearLayoutManager(this);
-        recycler.setLayoutManager(lManager);
-
-// Crear un nuevo adaptador
-        adapter = new EquipoAdapter(items);
-        recycler.setAdapter(adapter);
-
-
-*/
 
 
 
@@ -128,13 +107,6 @@ Declarar instancias globales
     }
 
 
-    private void inicializarDatos() {
-
-
-        items.add(new Equipo(R.drawable.bandera_brasil, "Brasil", 2));
-        items.add(new Equipo(R.drawable.bandera_uruguay, "Uruguay", 4));
-        items.add(new Equipo(R.drawable.bandera_argentina, "Argentina", 3));
-    }
 
 
 }
