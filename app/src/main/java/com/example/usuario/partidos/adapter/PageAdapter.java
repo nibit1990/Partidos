@@ -14,7 +14,7 @@ import java.util.List;
 public class PageAdapter extends FragmentPagerAdapter {
 
     // List of fragments which are going to set in the view pager widget
-    List<Fragment> fragments;
+    private List<Fragment> fragments;
 
 
 

@@ -1,10 +1,13 @@
 package com.example.usuario.partidos;
 
+import android.support.design.widget.TabLayout;
+import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.Toolbar;
 
 import com.example.usuario.partidos.adapter.EquipoAdapter;
 import com.example.usuario.partidos.adapter.PageAdapter;
@@ -15,8 +18,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static com.example.usuario.partidos.R.id.pager;
+import static com.example.usuario.partidos.R.id.tabLayout;
 
 public class MainActivity extends AppCompatActivity {
+
+    private Toolbar toolbar;
+    private TabLayout tabLayout;
+
 
     /*
 Declarar instancias globales
@@ -44,7 +52,36 @@ Declarar instancias globales
         inicializarDatos();
 
 
-// Obtener el Recycler
+
+
+
+        toolbar = (Toolbar) findViewById(R.id.toolbar);
+        tabLayout = (TabLayout) findViewById(R.id.tabLayout);
+
+        if (toolbar != null){
+            setSupportActionBar(toolbar);
+        }
+
+
+
+        // Instantiate a ViewPager
+        this.pager = (ViewPager) this.findViewById(R.id.pager);
+
+        // Create an adapter with the fragments we show on the ViewPager
+        PageAdapter adapter = new PageAdapter(getSupportFragmentManager());
+
+        adapter.addFragment(MainActivityFragment.newInstance(getResources().getColor(R.color.Blanco), 0));
+
+        adapter.addFragment(MainActivityFragment.newInstance(getResources().getColor(R.color.Blanco), 1));
+
+        this.pager.setAdapter(adapter);
+
+        tabLayout.setupWithViewPager(pager);
+
+
+
+/*
+        // Obtener el Recycler
         recycler = (RecyclerView) findViewById(R.id.reciclador);
         recycler.setHasFixedSize(true);
 
@@ -57,6 +94,7 @@ Declarar instancias globales
         recycler.setAdapter(adapter);
 
 
+*/
 
 
 
@@ -64,25 +102,18 @@ Declarar instancias globales
 
 
 
-        // Instantiate a ViewPager
-        this.pager = (ViewPager) this.findViewById(R.id.pager);
 
-        // Create an adapter with the fragments we show on the ViewPager
-        PageAdapter adapter = new PageAdapter(
-                getSupportFragmentManager());
-        adapter.addFragment(MainActivityFragment.newInstance(getResources()
-                .getColor(R.color.Blanco), 0));
-        adapter.addFragment(MainActivityFragment.newInstance(getResources()
-                .getColor(R.color.Blanco), 1));
-        adapter.addFragment(MainActivityFragment.newInstance(getResources()
-                .getColor(R.color.Blanco), 2));
-        adapter.addFragment(MainActivityFragment.newInstance(getResources()
-                .getColor(R.color.Blanco), 3));
-        adapter.addFragment(MainActivityFragment.newInstance(getResources()
-                .getColor(R.color.Blanco), 4));
-        this.pager.setAdapter(adapter);
+
+
+
+
+
+
+
+
 
     }
+
 
 
     @Override
@@ -97,9 +128,6 @@ Declarar instancias globales
     }
 
 
-
-
-
     private void inicializarDatos() {
 
 
@@ -107,9 +135,6 @@ Declarar instancias globales
         items.add(new Equipo(R.drawable.bandera_uruguay, "Uruguay", 4));
         items.add(new Equipo(R.drawable.bandera_argentina, "Argentina", 3));
     }
-
-
-
 
 
 }
