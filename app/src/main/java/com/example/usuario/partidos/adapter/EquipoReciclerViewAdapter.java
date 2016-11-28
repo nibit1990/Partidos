@@ -18,7 +18,7 @@ import java.util.List;
 
 
 
-    public class EquipoAdapter extends RecyclerView.Adapter<EquipoAdapter.EquipoViewHolder> {
+    public class EquipoReciclerViewAdapter extends RecyclerView.Adapter<EquipoReciclerViewAdapter.EquipoViewHolder> {
 
 
 
@@ -30,20 +30,20 @@ import java.util.List;
             // Campos respectivos de un item
             public ImageView ivBandera;
             public TextView tvNombre;
-            public TextView tvResultado;
+            public TextView tvPuntos;
 
             public EquipoViewHolder(View v) {
                 super(v);
                 ivBandera = (ImageView) v.findViewById(R.id.ivBandera);
                 tvNombre = (TextView) v.findViewById(R.id.tvNombre);
-                tvResultado = (TextView) v.findViewById(R.id.resultado);
+                tvPuntos = (TextView) v.findViewById(R.id.puntos);
             }
         }
 
 
 
 
-        public EquipoAdapter(List<Equipo> items) {
+        public EquipoReciclerViewAdapter(List<Equipo> items) {
             this.items = items;
         }
 
@@ -73,7 +73,7 @@ import java.util.List;
         public void onBindViewHolder(EquipoViewHolder viewHolder, int i) {
             viewHolder.ivBandera.setImageResource(items.get(i).getBandera());
             viewHolder.tvNombre.setText(items.get(i).getNombre());
-            viewHolder.tvResultado.setText("Resultado:"+String.valueOf(items.get(i).getResultado()));
+            viewHolder.tvPuntos.setText("Puntos:"+String.valueOf(items.get(i).getPuntos()));
         }
 
 

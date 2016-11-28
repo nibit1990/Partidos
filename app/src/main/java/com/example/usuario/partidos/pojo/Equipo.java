@@ -9,20 +9,20 @@ public class Equipo {
 
         private int bandera;
         private String nombre;
-        private int resultado;
+        private int puntos;
 
         public Equipo(int bandera, String nombre, int resultado) {
             this.bandera = bandera;
             this.nombre = nombre;
-            this.resultado = resultado;
+            this.puntos = resultado;
         }
 
         public String getNombre() {
             return nombre;
         }
 
-        public int getResultado() {
-            return resultado;
+        public int getPuntos() {
+            return puntos;
         }
 
         public int getBandera() {

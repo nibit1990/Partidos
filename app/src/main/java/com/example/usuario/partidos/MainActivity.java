@@ -5,16 +5,19 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.widget.ListView;
 
-import com.example.usuario.partidos.adapter.PageAdapter;
+import com.example.usuario.partidos.adapter.FragmentAdapter;
 import com.example.usuario.partidos.fragment.MainActivityFragment;
 import com.example.usuario.partidos.fragment.GrupoAFragment;
+
+import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
     private Toolbar toolbar;
     private TabLayout tabLayout;
-
+    ArrayList<Category> category = new ArrayList<Category>();
 
 
 
@@ -63,7 +66,6 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-
     }
 
 
@@ -86,7 +88,7 @@ public class MainActivity extends AppCompatActivity {
         this.pager = (ViewPager) this.findViewById(R.id.pager);
 
         // Create an adapter with the fragments we show on the ViewPager
-        PageAdapter adapter = new PageAdapter(getSupportFragmentManager());
+        FragmentAdapter adapter = new FragmentAdapter(getSupportFragmentManager());
 
         adapter.addFragment(MainActivityFragment.newInstance(0));
         adapter.addFragment(GrupoAFragment.newInstance(1));

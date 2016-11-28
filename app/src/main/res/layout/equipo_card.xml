@@ -43,7 +43,7 @@
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceSmall"
             android:text="Small Text"
-            android:id="@+id/resultado"
+            android:id="@+id/puntos"
             android:layout_below="@+id/tvNombre"
             android:layout_alignLeft="@+id/tvNombre" />
 

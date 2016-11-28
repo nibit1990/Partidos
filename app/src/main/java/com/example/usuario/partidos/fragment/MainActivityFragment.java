@@ -1,6 +1,5 @@
 package com.example.usuario.partidos.fragment;
 
-import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -9,10 +8,9 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
 import com.example.usuario.partidos.R;
-import com.example.usuario.partidos.adapter.EquipoAdapter;
+import com.example.usuario.partidos.adapter.EquipoReciclerViewAdapter;
 import com.example.usuario.partidos.pojo.Equipo;
 
 import java.util.ArrayList;
@@ -75,7 +73,7 @@ Declarar instancias globales
         recycler.setLayoutManager(lManager);
 
 // Crear un nuevo adaptador
-        adapter = new EquipoAdapter(items);
+        adapter = new EquipoReciclerViewAdapter(items);
         recycler.setAdapter(adapter);
 
 
@@ -96,6 +94,7 @@ Declarar instancias globales
         items.add(new Equipo(R.drawable.bandera_brasil, "Brasil", 2));
         items.add(new Equipo(R.drawable.bandera_uruguay, "Uruguay", 4));
         items.add(new Equipo(R.drawable.bandera_argentina, "Argentina", 3));
+        items.add(new Equipo(R.drawable.bandera_colombia, "Colombia", 0));
     }
 
 }

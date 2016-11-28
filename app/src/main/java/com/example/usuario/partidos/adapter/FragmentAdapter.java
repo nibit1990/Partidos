@@ -11,7 +11,7 @@ import java.util.List;
  * Created by Usuario on 23/11/2016.
  */
 
-public class PageAdapter extends FragmentPagerAdapter {
+public class FragmentAdapter extends FragmentPagerAdapter {
 
     // List of fragments which are going to set in the view pager widget
     private List<Fragment> fragments;
@@ -19,7 +19,7 @@ public class PageAdapter extends FragmentPagerAdapter {
 
 
 
-    public PageAdapter(FragmentManager fm) {
+    public FragmentAdapter(FragmentManager fm) {
         super(fm);
         this.fragments = new ArrayList<Fragment>();
     }
