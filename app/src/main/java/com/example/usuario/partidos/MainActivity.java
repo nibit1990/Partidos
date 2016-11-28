@@ -1,25 +1,14 @@
 package com.example.usuario.partidos;
 
 import android.support.design.widget.TabLayout;
-import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 
-import com.example.usuario.partidos.adapter.EquipoAdapter;
 import com.example.usuario.partidos.adapter.PageAdapter;
 import com.example.usuario.partidos.fragment.MainActivityFragment;
-import com.example.usuario.partidos.fragment.SegundoFragment;
-import com.example.usuario.partidos.pojo.Equipo;
-
-import java.util.ArrayList;
-import java.util.List;
-
-import static com.example.usuario.partidos.R.id.pager;
-import static com.example.usuario.partidos.R.id.tabLayout;
+import com.example.usuario.partidos.fragment.GrupoAFragment;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -31,10 +20,7 @@ public class MainActivity extends AppCompatActivity {
 
     ViewPager pager = null;
 
-    /**
-     * The pager adapter, which provides the pages to the view pager widget.
-     */
-    PageAdapter pagerAdapter;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,22 +43,9 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-        // Instantiate a ViewPager
-        this.pager = (ViewPager) this.findViewById(R.id.pager);
-
-        // Create an adapter with the fragments we show on the ViewPager
-        PageAdapter adapter = new PageAdapter(getSupportFragmentManager());
-
-        adapter.addFragment(MainActivityFragment.newInstance(0));
-        adapter.addFragment(SegundoFragment.newInstance(1));
 
 
-        this.pager.setAdapter(adapter);
-
-        tabLayout.setupWithViewPager(pager);
-
-
-
+        setUpViewPager();
 
 
 
@@ -107,7 +80,31 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
+    private void setUpViewPager(){
 
+        // Instantiate a ViewPager
+        this.pager = (ViewPager) this.findViewById(R.id.pager);
+
+        // Create an adapter with the fragments we show on the ViewPager
+        PageAdapter adapter = new PageAdapter(getSupportFragmentManager());
+
+        adapter.addFragment(MainActivityFragment.newInstance(0));
+        adapter.addFragment(GrupoAFragment.newInstance(1));
+
+
+        this.pager.setAdapter(adapter);
+
+        tabLayout.setupWithViewPager(pager);
+
+        tabLayout.getTabAt(0).setIcon(R.drawable.ic_futbol);
+        tabLayout.getTabAt(1).setIcon(R.drawable.ic_letra_a);
+        tabLayout.getTabAt(0).setText("Tabla");
+        tabLayout.getTabAt(1).setText("Grupo A");
+
+
+
+
+    }
 
 }
 
