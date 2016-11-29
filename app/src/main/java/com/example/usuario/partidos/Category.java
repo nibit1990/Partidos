@@ -1,7 +1,7 @@
 package com.example.usuario.partidos;
 
 /**
- * Created by Usuario on 28/11/2016.
+ * Created by Usuario on 29/11/2016.
  */
 
 public class Category {

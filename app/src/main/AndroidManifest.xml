@@ -12,7 +12,7 @@
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
+                <partidos android:name="android.intent.partidos.LAUNCHER" />
             </intent-filter>
         </activity>
     </application>
